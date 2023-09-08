@@ -6,15 +6,35 @@ import { Component } from '@angular/core';
             <h2>
               welcome {{name}}
             </h2>
-            <input [id]="myId" type="text" value= "Vishal">
-            <input id="{{myId}}" type="text" value= "Vishal">
-            <input [disabled]="isDisabled" id="{{myId}}" type="text" value="Vishal">
-            <input [disabled]="false" id="{{myId}}" type="text" value="Vishal">
+            <h2 class="text-success">Vishal Poddar</h2>
+            <h2 [class]="successClass">Vishal Poddar</h2>
+            <h2 [class.text-danger]="hasError"> Vishal Poddar</h2>
+            <h2 [ngClass]="messageClasses"> Vishal Poddar</h2>
+
+
         `,
-  styleUrls: ['./test.component.css']
+  styles: [ `
+    .text-success{
+      color : green;
+    }
+    .text-danger{
+      color : red;
+    }
+    .text-special{
+      font-style : italic;
+    }
+  `]
 })
 export class TestComponent {
-  public myId = "newId"
-  public name = "vishal"
-  public isDisabled = false;
+
+  public name= "vishal"
+  public successClass= "text-success"
+  public hasError = true
+  public isSpecial = true;
+  public messageClasses={
+    "text-message":!this.hasError,
+    "text-danger":this.hasError,
+    "text-special":this.isSpecial
+  }
+  
 }
