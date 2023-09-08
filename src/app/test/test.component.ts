@@ -6,21 +6,16 @@ import { Component } from '@angular/core';
             <h2>
               welcome {{name}}
             </h2>
-            <button (click)="onClick($event)">Button</button>
-            <button (click)="greetings = 'Welcome to the city'">Button</button>
-            <h2>
-              {{greetings}}
-            </h2>
+            <input #myInput type="text">
+            <button (click)="logMessage(myInput.value)">Log</button>
         `,
   styles: []
 })
 export class TestComponent {
   public name= "vishal";
   public greetings= ""
-  onClick(event: any){
-    console.log("welcome Vishal");
-    this.greetings="Welcome to the city"
-    console.log(event)
+  logMessage(value:string){
+    console.log(value);
   }
   
 }
