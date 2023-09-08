@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
             <h2>
               welcome {{name}}
             </h2>
-            <input #myInput type="text">
-            <button (click)="logMessage(myInput.value)">Log</button>
+            <input [(ngModel)]="name" type="text">
+            {{name}}
         `,
   styles: []
 })
