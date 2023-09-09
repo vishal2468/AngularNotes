@@ -12,19 +12,17 @@ import { Component } from '@angular/core';
 
             <br>
 
-            <h2 *ngIf="displayName; then thenBlock2; else elseBlock2;">
-              Test: welcome {{name}}
-            </h2>
-            <ng-template #thenBlock2>
-              <h2>Name is not diaplayed</h2>
-            </ng-template>
-            <ng-template #elseBlock2>
-              <h2>Name is not diaplayed</h2>
-            </ng-template>
+            <div [ngSwitch]="count">
+              <h2 *ngSwitchCase= "1" > vishal</h2>
+              <h2 *ngSwitchCase= "2" > poddar</h2>
+              <h2 *ngSwitchCase= "3" > hi</h2>
+              <h2 *ngSwitchDefault>Pick again</h2>
+            </div>
         `,
   styles: []
 })
 export class TestComponent {
   public name= "vishal";
+  public count =2 ;
   public displayName = false;
 }
