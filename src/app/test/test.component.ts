@@ -1,15 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-test',
   template: `
-            <div *ngFor="let name of names ; index as i ; first as f ; last as l; odd as o ; even as e">
-              <br>
-              <h1>{{i}} Hi {{name}} {{f}} {{l}}</h1>
-            </div>
+          <div>
+            <h2>{{parentData}}</h2>
+            <button (click)="fireEvent()">Send Button</button>
+          </div>
         `,
   styles: []
 })
 export class TestComponent {
-  public names = ["Mumbai","Delhi","Kochi","Bangalore","Chennai"]
+  
+  @Input() public parentData: any;
+  @Input('parentData') public name: any;
+
+  @Output() public childEvent = new EventEmitter()
+
+  fireEvent(){
+    this.childEvent.emit('Hi Vishal Poddar')
+  }
 }
