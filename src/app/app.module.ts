@@ -8,7 +8,8 @@ import { EmployeesListComponent } from './employees-list/employees-list.componen
 import { EmployeeService } from './employee.service';
 import {HttpClientModule} from "@angular/common/http";
 import { DepartmentListComponent } from './department-list/department-list.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { EmployeeDetailsComponent } from './employee-details/employee-details.component'
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     EmployeesListComponent,
     DepartmentListComponent,
     PageNotFoundComponent,
+    EmployeeDetailsComponent,
   ],
   imports: [
     BrowserModule,
