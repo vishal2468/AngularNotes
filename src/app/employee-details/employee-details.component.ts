@@ -17,15 +17,15 @@ export class EmployeeDetailsComponent {
 
   goPrevious(){
     let previousId = this.employeeId-1
-    this.router.navigate(["/employees",previousId])
+    this.router.navigate(['../',previousId],{relativeTo:this.route})
   }
   goNext(){
     let nextid = this.employeeId+1
-    this.router.navigate(["/employees",nextid])
+    this.router.navigate(['../',nextid],{relativeTo:this.route})
   }
   gotoEmployees(){
     let selectedId=this.employeeId;
-    this.router.navigate(['/employees',{"id":selectedId}]);
+    this.router.navigate(['../',{"id":selectedId}],{relativeTo:this.route}); 
   }
 
   ngOnInit() {
