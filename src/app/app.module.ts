@@ -9,7 +9,9 @@ import { EmployeeService } from './employee.service';
 import {HttpClientModule} from "@angular/common/http";
 import { DepartmentListComponent } from './department-list/department-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { EmployeeDetailsComponent } from './employee-details/employee-details.component'
+import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
+import { EmployeeOverviewComponent } from './employee-overview/employee-overview.component';
+import { EmployeeContactComponent } from './employee-contact/employee-contact.component'
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { EmployeeDetailsComponent } from './employee-details/employee-details.co
     DepartmentListComponent,
     PageNotFoundComponent,
     EmployeeDetailsComponent,
+    EmployeeOverviewComponent,
+    EmployeeContactComponent,
   ],
   imports: [
     BrowserModule,

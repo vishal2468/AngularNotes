@@ -4,6 +4,9 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
   selector: 'app-employee-details',
   template: `
   <h2> employee-details work {{employeeId}}</h2>
+  <button (click)="showOverview()">Overview</button>
+  <button (click)="showContacts()">Contacts</button>
+  <router-outlet></router-outlet>
   <button (click)="goPrevious()">Previous</button>
   <button (click)="goNext()">Next</button>
   <button (click)="gotoEmployees()">Back</button>
@@ -11,6 +14,12 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
   styleUrls: ['./employee-details.component.css']
 })
 export class EmployeeDetailsComponent {
+  showOverview() {
+    this.router.navigate(['overview'],{relativeTo:this.route})
+  }
+  showContacts() {
+    this.router.navigate(['contact'],{relativeTo:this.route})
+  }
   public employeeId: any;
 
   constructor(private route: ActivatedRoute,private router:Router) { }
