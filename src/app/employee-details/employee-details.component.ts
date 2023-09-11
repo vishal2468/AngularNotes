@@ -6,6 +6,7 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
   <h2> employee-details work {{employeeId}}</h2>
   <button (click)="goPrevious()">Previous</button>
   <button (click)="goNext()">Next</button>
+  <button (click)="gotoEmployees()">Back</button>
   `,
   styleUrls: ['./employee-details.component.css']
 })
@@ -21,6 +22,10 @@ export class EmployeeDetailsComponent {
   goNext(){
     let nextid = this.employeeId+1
     this.router.navigate(["/employees",nextid])
+  }
+  gotoEmployees(){
+    let selectedId=this.employeeId;
+    this.router.navigate(['/employees',{"id":selectedId}]);
   }
 
   ngOnInit() {
